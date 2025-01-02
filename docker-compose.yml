@@ -1,0 +1,23 @@
+version: '3'
+services:
+app:
+container_name: api-carWash
+build:
+ports:
+- "3000:3000"
+environment:
+- DATABASE_URL=jdbc://mysqldb:3306/carwash
+- DATABASE_USERNAME=root
+- DATABASE_PASSWORD=root
+depends_on:
+- mysqldb
+
+mysqldb:
+container_name: "mysql-carWash"
+image: "mysql:5.7"
+ports:
+- "3306:3306"
+volumes:
+- ./mysql:/var/lib/mysql
+- ./mysql-dump:/docker-entrypoint-initdb.d
+
