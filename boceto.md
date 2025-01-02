@@ -79,12 +79,10 @@ const services = [
 ];
 
 
+____________________________________________________________________________________________________________________________________
 
 
-Rutas principales:
-
-javascript
-Copiar código
+Rutas principales: 
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -121,29 +119,23 @@ app.post("/services", (req, res) => {
 // Server setup
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+***********************************************
 Ejemplo de Uso:
 Crear un nuevo cliente:
-
-json
-Copiar código
 POST /customers
 {
   "name": "Juan Pérez",
   "phone": "5551234567"
 }
-Crear un servicio:
-
-json
-Copiar código
+Crear un servicio: 
 POST /services
 {
   "name": "Lavado y Encerado",
   "price": 25.0
 }
-Reservar un turno:
 
-json
-Copiar código
+Reservar un turno: 
 POST /appointments
 {
   "date": "2024-12-16T09:00:00Z",
